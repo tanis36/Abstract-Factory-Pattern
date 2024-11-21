@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 // Abstract Products
 class Button {
@@ -48,6 +49,17 @@ public:
     void render() override {
         std::cout << "Rendering Android Checkbox" << std::endl;
     }
+};
+
+// Abstract Factory
+class GUIFactory {
+public:
+    // Create the button
+    virtual std::unique_ptr<Button> createButton() = 0;
+    // Create the checkbox
+    virtual std::unique_ptr<Checkbox> createCheckbox() = 0;
+    // Destructor
+    virtual ~GUIFactory() = default;
 };
 
 int main() {
