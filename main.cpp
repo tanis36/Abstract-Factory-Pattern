@@ -99,6 +99,18 @@ void renderUI(GUIFactory& factory) {
     checkbox->render();
 }
 
+// Main
 int main() {
+    // Initialize an AppleFactory
+    AppleFactory appleFactory;
+    // Initialize an AndroidFactory
+    AndroidFactory androidFactory;
 
+    // Render the Apple UI
+    std::cout << "Apple UI:" << std::endl;
+    renderUI(appleFactory);
+
+    // Render the Android UI
+    std::cout << "Android UI:" << std::endl;
+    renderUI(androidFactory);
 }
