@@ -62,6 +62,31 @@ public:
     virtual ~GUIFactory() = default;
 };
 
+// Concrete Factories
+class AppleFactory : public GUIFactory {
+public:
+    // Create the Apple button
+    std::unique_ptr<Button> createButton() override {
+        return std::make_unique<AppleButton>();
+    }
+    // Create the Apple checkbox
+    std::unique_ptr<Checkbox> createCheckbox() override {
+        return std::make_unique<AppleCheckbox>();
+    }
+};
+
+class AndroidFactory : public GUIFactory {
+public:
+    // Create the Android button
+    std::unique_ptr<Button> createButton() override {
+        return std::make_unique<AndroidButton>();
+    }
+    // Create the Android checkbox
+    std::unique_ptr<Checkbox> createCheckbox() override {
+        return std::make_unique<AndroidCheckbox>();
+    }
+};
+
 int main() {
 
 }
