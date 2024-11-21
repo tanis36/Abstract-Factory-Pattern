@@ -87,6 +87,18 @@ public:
     }
 };
 
+// Render the user interface
+void renderUI(GUIFactory& factory) {
+    // Create the button
+    auto button = factory.createButton();
+    // Create the checkbox
+    auto checkbox = factory.createCheckbox();
+    // Render the button
+    button->render();
+    // Render the checkbox
+    checkbox->render();
+}
+
 int main() {
 
 }
